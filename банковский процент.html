@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Процент вклада</title>
+<style>
+	body
+	{
+		font-size: 20px;
+		color:brown;
+	}
+	b
+	{
+		color:crimson;
+	}
+	strong
+	{
+		color: coral;
+	}
+
+</style>
+</head>
+<body>
+<script>
+var proc=+prompt("Введите процентную ставку");
+var sum=+prompt("Введите сумму вашего вклада");
+
+for (var i=1;i<6;i++) {
+	sum=(sum/100*proc)+sum;
+	document.write("<b><strong>Вклад с процентами, через " + i + " составит " + Math.floor(sum)+ "</strong></b><br>");
+}
+
+
+</script>
+</body>
+</html>
