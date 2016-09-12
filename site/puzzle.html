@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script>
+
+function checkAnswer1(id, trueAnswer) 
+
+{
+	var userAnswer = document.getElementByld(id).value;
+	if (userAnswer == trueAnswer)
+		return true;
+	else
+		return false;
+}
+
+function checkAnswers1()
+
+{
+	var goodAnswers = 0;
+	if (checkAnswer1("puzzle1","капуста"))
+		goodAnswers++;
+	if (checkAnswer1("puzzle2",'елка'))
+		goodAnswers++;
+	if (goodAnswers == 0)
+		return alert("Неудача 0 правильгых ответов");
+	else
+		return alert("Количество правильных ответов" + goodAnswers);
+}
+
+</script>
+<body>
+	
+	<h3>Отгадай загадки!</h3>
+	<p>Сто одежек и все без застежек</p>
+	<input type="text" id=puzzle1/>
+
+	</br></br></br>
+	<p> Зимой и летом одним цветом </p>
+	<input type="text" id=puzzle2 />
+	</br></br></br>
+	<input type="button" onClick="checkAnswers1()" value="Ответить"/>
+alert(puzzle2)
+
+
+
+</body>
