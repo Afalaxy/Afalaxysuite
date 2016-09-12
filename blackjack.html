@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+<script>
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getCard() {
+	var card = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+	return card[getRandomInt(0, card.length - 1)];
+}
+
+function getSum(arr) {
+    var sum = 0;
+    var i = 0;
+    for (i=0; i<arr.length; i++) {
+    	var card = arr[i];
+    	if (card != 'A') {
+    		if (card == 'J' || card == 'Q' || card == 'K') {
+    			sum = sum + 10;
+    		}  else {
+    			sum = sum + parseInt(card);
+    		}
+    	}
+    }
+
+    for (var i=0; i<arr.length; i++) {
+    	var card = arr[i];
+    	if (card == 'A') {
+    		if (sum > 10) {
+    			sum = sum + 1;
+    		} else {
+    			sum = sum + 11;
+    		}
+    	}
+    }
+
+return sum;
+
+}
+
+
+var dealer = [getCard()];
+var player = [getCard(), getCard()];
+var esho = 0;
+
+
+alert('дилер:' + dealer.join(' ') + 'Игрок:' + player.join(' '));
+var esho = prompt('Текущая сумма карт у игрока :' + getSum(player) + 'Еще = 1 Хватит = 0 ');
+
+
+
+while (esho == 1) {
+    
+    player.push(getCard());
+    alert('дилер:' + dealer.join(' ') + 'Игрок:' + player.join(' '));
+	esho = parseInt(prompt('Текущая сумма карт у игрока :' + getSum(player) + 'Еще = 1 Хватит = 0 '));
+}
+
+if (getSum(player) > 21) {
+	alert('У Вас перебор победил диллер')
+} else {
+
+   alert('дилер:' + getSum(dealer) + 'Игрок:' + getSum(player));
+
+
+	while (getSum(dealer) < getSum(player)) {
+
+	dealer.push(getCard());
+	alert('дилер:' + dealer.join(' ') + 'Игрок:' + player.join(' '));
+	alert('дилер:' + getSum(dealer) + 'Игрок:' + getSum(player));
+
+	}
+
+	if (getSum(dealer) >= getSum(player) && getSum(dealer) < 21) {
+
+	alert('Победил диллер');
+	} else {
+
+	alert('Вы победили');
+	}
+}
+</script>
