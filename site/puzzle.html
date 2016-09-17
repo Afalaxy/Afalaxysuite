@@ -1,44 +1,52 @@
+<!DOCTYPE.html>
+<html>
 <meta charset="utf-8">
-<script>
+<head>
+<script type="text/javascript">
 
-function checkAnswer1(id, trueAnswer) 
+var goodAnswers = 0;
+function checkAnswer1(textBoxId, trueAnswer) 
 
 {
-	var userAnswer = document.getElementByld(id).value;
+	var userAnswer = document.getElementById(textBoxId).value;
 	if (userAnswer == trueAnswer)
-		return true;
-	else
-		return false;
+		goodAnswers++;
 }
 
 function checkAnswers1()
 
 {
-	var goodAnswers = 0;
-	if (checkAnswer1("puzzle1","капуста"))
-		goodAnswers++;
-	if (checkAnswer1("puzzle2",'елка'))
-		goodAnswers++;
+	checkAnswer1("puzzle1","капуста");
+	checkAnswer1("puzzle2",'елка');
+	
 	if (goodAnswers == 0)
 		return alert("Неудача 0 правильгых ответов");
 	else
 		return alert("Количество правильных ответов" + goodAnswers);
 }
-
 </script>
+</head>
+
 <body>
 	
 	<h3>Отгадай загадки!</h3>
 	<p>Сто одежек и все без застежек</p>
-	<input type="text" id=puzzle1/>
+	<input type="text" id=puzzle1 class="my_input"/>
 
 	</br></br></br>
 	<p> Зимой и летом одним цветом </p>
-	<input type="text" id=puzzle2 />
+	<input type="text" id=puzzle2 class="my_input" />
 	</br></br></br>
-	<input type="button" onClick="checkAnswers1()" value="Ответить"/>
-alert(puzzle2)
+	<input type="button" onClick="checkAnswers1()" value="Ответить" />
+
 
 
 
 </body>
+<div id="header">
+	<a href="#">Главная</a><span>/</span>
+	<a href="puzzle.html">Загадки</a><span>/</span>
+	<a href="guess.html">Угадайка</a><span>/</span>
+	<a href="media.html">Угадай мультиплеер</a>
+</div>
+</html>

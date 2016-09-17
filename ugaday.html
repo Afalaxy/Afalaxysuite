@@ -1,0 +1,52 @@
+<!DOCTYPE.html>
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+var max = 1;
+var min = 100;
+var n = Math.floor(Math.random()*(max-min+1))+min;
+var i = 0;
+
+function shoot(i)
+{	
+	if (i<7) {
+			var q = 7-i;
+						return alert ("У Вас осталось" + q + "попыток");
+	}		else alert("попытки закончились попробуйте еще разок");
+			
+
+}
+
+function checkAnswers(id)
+{
+	i++;
+	shoot(i);
+	var userAnswer = document.getElementById(id).innerHTML;
+	alert(userAnswer);
+		if (userAnswer == n) 
+		{
+			alert("Угадали");
+		} else {
+				if (userAnswer < n) {
+				alert("Недолет" + n + userAnswer);}
+				else { return alert("Перелет" + n + userAnswer); }
+				}
+		
+}
+
+alert(userAnswer);
+
+</script>
+
+
+<body>
+	
+	<h3>Сыграес в угадайку</h3>
+	<input type="number" id="4"/>
+	<input type="button" onClick="checkAnswers(4)" value="Ответить"/>
+	
+
+
+
+</body>
+</html>
