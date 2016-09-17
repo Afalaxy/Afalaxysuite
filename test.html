@@ -1,2 +1,24 @@
-<meta charset="utf-8">
-<script>
+<script type="text/javascript">
+	var a = "1 2 3124214";
+	var aspl = a.split('');
+	var sum = 1;
+	var kolb = 0;
+	
+	var kt = [];
+	var j = a.length
+
+	alert(aspl)
+
+	function sumNechet()
+	{
+		for (i=0; i<j; i++)
+		{
+			if (aspl[i] % 2!=0)
+			{
+				sum=aspl[i].value+sum;
+				alert(aspl[i]);
+
+			}
+		} 
+	}document.getElementById('summa').value = sum;
+</script>

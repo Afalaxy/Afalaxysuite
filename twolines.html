@@ -1,0 +1,28 @@
+<!DOCTYPE.html>
+<html>
+<head>
+<title> JavaScript</title>
+</head>
+<body>
+<meta charset="utf-8">
+<script>
+function f_click() {
+var first = document.getElementById("1").value;
+var second= document.getElementById("2").value;
+var b_lines = document.getElementById('lines');
+var S = first.split('');
+var lj = S.length;
+for (j = 0; j < lj; j++)
+ if (second.indexOf(S[j]) != -1)
+ {first = first.split (S[j]).join(''); second = second.split(S[j]).join('')}
+b_lines.innerHTML=((first + second).split(''));
+}
+</script>
+Введите 1 строку: <br />
+<input id='1' name="login" type="text" size="25" maxlength="30" value="" /> <br />
+Введите 2 строку: <br />
+<input id='2' name="pd" type="text" size="25" maxlength="30" value="" /> <br />
+<input type="button" name="enter" value="Расчет" onclick="f_click()" />
+<div style="margin: 0 auto;width: 200px; font-size:25px" id="lines"></div>
+</body>
+</html>

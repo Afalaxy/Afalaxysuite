@@ -1,0 +1,44 @@
+//Задача: Дан одномерный массив целых чисел, состоящий из 9 элементов. Требуется:
+
+    Найти сумму элементов, имеющих нечетные индексы, и количество элементов, значения которых меньше числа b и при этом кратны 5;
+    Умножить все элементы, кратные 3, на третий элемент массива, кроме него самого (в случае, если он кратен числу 3).
+
+<!DOCTYPE.html>
+<head>
+<title>
+	Задача js 2
+</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+	var a = document.getElementById("mas").value;
+	var aspl = [];
+	var sum = 1;
+	var kolb = 0;
+	var b = document.getElementById("num").value;
+	var kt = [];
+	var j = a.length
+
+	function sumNechet()
+	{ alert(aspl);
+		for (i=0; i<j; i++)
+		{
+			aspl[i] = a[i];
+			if (aspl[i].value % 2 == 0)
+			{
+				sum=aspl[i].value+sum;
+				alert(aspl[i]);
+
+			}
+		} document.getElementById('summa').value = sum;
+	} document.getElementById('summa').value = sum;
+</script>
+</head>
+<body>
+	<p> Задайте массив </p>
+	<input type="text" id=mass>
+	<p>Задайте число</p>
+	<input type="number" name="num" id="num">
+
+	<input type="button" value="Найти сумму элементов массива" onclick="sumNechet()">
+	<input type="text" name="summa" id="summa" size="9">
+</body>

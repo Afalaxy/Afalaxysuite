@@ -1,0 +1,58 @@
+<!doctype>
+<html>
+<head>
+<title>Задачи по JavaScript</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+var a=document.getElementsByTagName("input");
+var mas=[];
+var sum=0,j=0;
+function suma(){
+var b=document.getElementById("chislB").value;
+ for(i=0;i<=8;i++){
+ mas[i]=a[i].value;
+ if (mas[i] < parseInt(b) && mas[i] % 5==0){
+ j++;
+ }
+ if (i%2 == 1)
+ {
+ sum=sum+parseInt(mas[i]);
+ }
+ }
+ document.getElementById('SumEl').value = sum;
+ document.getElementById('index').value = j;
+ }
+ function umno(){
+ var t=a[2].value;
+ for(i=0;i<=8;i++){
+ if (a[i].value % 3==0 && i!=2)
+ {
+ a[i].value=a[i].value*t;
+ }
+}
+}
+</script>
+</head>
+<body>
+<h1>Введите данные в массив</h1>
+ <p>
+ <input type="text" name="elmas1" size="3">
+ <input type="text" name="elmas2" size="3">
+ <input type="text" name="elmas3" size="3">
+ <input type="text" name="elmas4" size="3">
+ <input type="text" name="elmas5" size="3">
+ <input type="text" name="elmas6" size="3">
+ <input type="text" name="elmas7" size="3">
+ <input type="text" name="elmas8" size="3">
+ <input type="text" name="elmas9" size="3"><br><br>
+ Введите число b:
+ <input type="text" name="chislB" id="chislB" size="3"><br><br>
+ <input type="button" id="btn" value="Найти сумму и количество эл-ов" onclick="suma()"><br><br>
+ Сумма элементов массива, имеющих нечетное индексы:
+ <input type="text" name="SumEl" id="SumEl" size="3"><br><br>
+ Количество эл-ов < b и кратны 5:
+ <input type="text" name="index" id="index" size="3"><br><br>
+ <input type="button" value="Умножить" onclick="umno()"><br><br>
+ </p>
+</body>
+</html>
