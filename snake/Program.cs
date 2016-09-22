@@ -22,8 +22,21 @@ namespace ConsoleApplication1
             p2.sym = '#';
             p2.Draw();
 
+            point p3 = new point(2, 4, '0');
+            p3.Draw();
+
+            point p4 = new point(3, 8, 'r');
+            p3.Draw();
+
+            List<point> pList = new List<point>();
+            pList.Add(p1);
+            pList.Add(p2);
+            pList.Add(p3);
+            pList.Add(p4);
+            
 
 
+        
             Console.ReadLine();
 
         }
