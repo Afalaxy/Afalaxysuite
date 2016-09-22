@@ -22,12 +22,12 @@ namespace ConsoleApplication1
             point p4 = new point(3, 8, 'r');
             p3.Draw();
 
-            List<point> pList = new List<point>();
-            pList.Add(p1);
-            pList.Add(p2);
-            pList.Add(p3);
-            pList.Add(p4);
-            
+            horixontal line = new horixontal(5,10,8,'+');
+            line.Drow();
+
+            vertical line1 = new vertical(10, 9, 2, '|');
+            line1.Drow();
+
 
 
         
