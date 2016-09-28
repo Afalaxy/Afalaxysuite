@@ -8,31 +8,62 @@ namespace ConsoleApplication1
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            point p1 = new point(1, 3, '*');
-            p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-            point p2 = new point(4, 5, '#');
-            p2.Draw();
+            //Отрисовка рамочки
+            horixontal upLine = new horixontal(0, 78, 0, '+');
+            horixontal downLine = new horixontal(0, 78, 24, '+');
+            vertical leftLine = new vertical(0, 24, 0, '+');
+            vertical rightLine = new vertical(0, 24, 78, '+');
 
-            point p3 = new point(2, 4, '0');
-            p3.Draw();
+            upLine.Drow();
+            downLine.Drow();
+            leftLine.Drow();
+            rightLine.Drow();
 
-            point p4 = new point(3, 8, 'r');
-            p3.Draw();
+            //Отрисовка точек
 
-            horixontal line = new horixontal(5,10,8,'+');
-            line.Drow();
+            
+            point p = new point(4, 5, '*');
+            snake Snake = new snake( p, 4, direction.RIGHT);
+            Snake.Drow();
 
-            vertical line1 = new vertical(10, 9, 2, '|');
-            line1.Drow();
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            point food = foodCreator.CreatFood();
+            food.Draw();
+
+            while (true)
+            {
+                if(snake.Eat(food))
+                {
+                    food = foodCreator.CreatFood();
+                    food.Draw();
+
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+            }
+            Thread.Sleep(100);
+
+          
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    Snake.HandleKey(key.Key);
+
+                }
 
 
 
-        
-            Console.ReadLine();
-
+                Thread.Sleep(100);
+                snake.Move();
+                Console.ReadLine();
         }
     }
 }
